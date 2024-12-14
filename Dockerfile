@@ -10,5 +10,7 @@ COPY . .
 # Instalar las dependencias del proyecto
 RUN npm install
 
+EXPOSE 443
+
 # Comando para iniciar la aplicación npm start -- --port "5000"
 CMD ["npm", "start", "--", "--tls-cert", "cert.pem", "--tls-key", "key.pem"]
