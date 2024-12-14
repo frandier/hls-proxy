@@ -36,6 +36,14 @@ const get_middleware = function(params) {
 
   // Create an HTTP tunneling proxy
   middleware.request = async (req, res) => {
+    // Manejar solicitudes OPTIONS
+    if (req.method === 'OPTIONS') {
+      utils.add_CORS_headers(res)
+      res.writeHead(204)
+      res.end()
+      return
+    }
+
     if (!is_acl_pass_allowed(req)) {
       res.writeHead(401)
       res.end()
