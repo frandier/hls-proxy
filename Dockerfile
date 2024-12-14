@@ -11,4 +11,4 @@ COPY . .
 RUN npm install
 
 # Comando para iniciar la aplicación npm start -- --port "5000"
-CMD ["npm", "start", "--", "--port", "5000"]
+CMD ["npm", "start", "--", "--port", "7000"]
