@@ -11,4 +11,4 @@ COPY . .
 RUN npm install
 
 # Comando para iniciar la aplicación npm start -- --port "5000"
-CMD ["npm", "start", "--", "--tls", "--port", "7000"]
+CMD ["npm", "start", "--", "--tls-cert", "cert.pem", "--tls-key", "key.pem"]
